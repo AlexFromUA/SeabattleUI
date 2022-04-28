@@ -1,3 +1,19 @@
+<div class="mt-3">
+  <button routerLink="/registration">Registration</button>
+</div>
+
+<div *ngIf="(accountService.currentUser$ | async) === null" class="mt-3">
+  <button routerLink="/login">Login</button>
+</div>
+
+<div *ngIf="(accountService.currentUser$ | async)"  class="mt-3">
+  <button (click)="logout()">Login</button>
+</div>
+
+<div *ngIf="(accountService.currentUser$ | async) as user">
+  Welcome {{user.username | titlecase}}    
+</div>
+
 <div class="container" style="margin-top: 100px">
   <router-outlet></router-outlet>
 </div>
