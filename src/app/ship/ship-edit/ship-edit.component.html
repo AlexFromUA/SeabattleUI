@@ -1,0 +1,24 @@
+<h2>Edit ship</h2>
+<div class="m-2">
+    <button routerLink="">Back to list</button>
+</div>
+<div class="row mt-3 mb-3">
+    {{ship.id}} - {{ship.type}}
+</div>
+
+<form [formGroup]='shipForm' (ngSubmit)="shipForm.valid && updateShip()" autocomplete="off">
+    <div class="mb-3">
+        <label style="margin-right: 10px;">Type of ship: </label>
+        <label class="form-check-label">
+            <input type="radio" value='battleship' formControlName='type' class="form-check-input"> Battleship
+        </label>
+        <label class="form-check-label">
+            <input type="radio" value='supportship' formControlName='type' class="form-check-input ms-3"> Supportship
+        </label>
+        <label class="form-check-label">
+            <input type="radio" value='combinedship' formControlName='type' class="form-check-input ms-3"> Combinedship
+        </label>
+    </div>
+
+    <button class="btn btn-success mr-2" type="submit">Update ship</button>
+</form>

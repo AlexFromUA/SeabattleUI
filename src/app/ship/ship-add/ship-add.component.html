@@ -1,0 +1,20 @@
+<h2>Add ship</h2>
+<div class="m-2">
+    <button routerLink="">Back to list</button>
+</div>
+<form [formGroup]='shipForm' (ngSubmit)="shipForm.valid && addShip()" autocomplete="off">
+    <div class="mb-3">
+        <label style="margin-right: 10px;">Type of ship: </label>
+        <label class="form-check-label">
+            <input class="form-check-input" type="radio" value='battleship' formControlName='type'> Battleship
+        </label>
+        <label class="form-check-label">
+            <input type="radio" value='supportship' formControlName='type' class="form-check-input ms-3"> Supportship
+        </label>
+        <label class="form-check-label">
+            <input type="radio" value='combinedship' formControlName='type' class="form-check-input ms-3"> Combinedship
+        </label>
+    </div>
+
+    <button class="btn btn-success mr-2" type="submit">Add ship</button>
+</form>
