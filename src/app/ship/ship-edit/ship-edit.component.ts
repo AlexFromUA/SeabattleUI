@@ -19,8 +19,8 @@ export class ShipEditComponent implements OnInit {
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private shipService: ShipService) { }
 
   ngOnInit(): void {
-    this.getShip();
     this.intitializeForm();
+    this.getShip();
   }
 
   getShip(){

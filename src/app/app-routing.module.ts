@@ -5,11 +5,12 @@ import { RegisterComponent } from './account/register/register.component';
 import { ShipAddComponent } from './ship/ship-add/ship-add.component';
 import { ShipEditComponent } from './ship/ship-edit/ship-edit.component';
 import { ShipListComponent } from './ship/ship-list/ship-list.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: ShipListComponent},
-  {path: 'ship-edit/:id', component: ShipEditComponent},
-  {path: 'ship-add', component: ShipAddComponent},
+  {path: '', component: ShipListComponent, canActivate: [AuthGuard]},
+  {path: 'ship-edit/:id', component: ShipEditComponent, canActivate: [AuthGuard]},
+  {path: 'ship-add', component: ShipAddComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegisterComponent}
 ];

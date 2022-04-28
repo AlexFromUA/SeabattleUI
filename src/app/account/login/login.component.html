@@ -1,4 +1,6 @@
-<p>login works!</p>
+<div class="m-2">
+    <button routerLink="">Back to list</button>
+</div>
 <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
     <input 
         name="username"

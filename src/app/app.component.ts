@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AccountService } from './services/account.service';
 
 @Component({
@@ -9,6 +10,10 @@ import { AccountService } from './services/account.service';
 export class AppComponent {
   title = 'SeabattleUI';
 
-  constructor(public accountService: AccountService){}
-
+  constructor(public accountService: AccountService, private router: Router){}
+  
+  logout() {
+    this.accountService.logout();
+    this.router.navigateByUrl('/login');
+  }
 }
